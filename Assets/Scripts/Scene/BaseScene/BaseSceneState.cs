@@ -2,15 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseSceneState : MonoBehaviour {
+public class BaseSceneState : IBaseSceneState
+{
+    protected UIFacade mUIFacade;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public BaseSceneState(UIFacade uiFacade)
+    {
+        mUIFacade = uiFacade;
+    }
+
+    public virtual void EnterScene()
+    {
+        mUIFacade.InitDict();
+    }
+
+    public virtual void ExitScene()
+    {
+        mUIFacade.ClearDict();
+    }
 }

@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour {
 
     public PlayerManager playerManager;
     public FactoryManager factoryManger;
-    public AudioSourceManager audioSourceManger;
+    public AudioSourceManager audioSourceManager;
     public UIManager uiManager;
 
     private static GameManager _instance;
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour {
         _instance = this;
         playerManager = new PlayerManager();
         factoryManger = new FactoryManager();
-        audioSourceManger = new AudioSourceManager();
+        audioSourceManager = new AudioSourceManager();
         uiManager = new UIManager();
 
     }
@@ -35,4 +35,30 @@ public class GameManager : MonoBehaviour {
         GameObject go = Instantiate(itemGo);
         return go;
     }
+
+    public Sprite GetSprite(string resourcePath)
+    {
+        return factoryManger.spriteFactory.GetSingleResource(resourcePath);
+    }
+
+    public AudioClip GetAudioClip(string resourcePath)
+    {
+        return factoryManger.auidoClipFactory.GetSingleResource(resourcePath);
+    }
+
+    public RuntimeAnimatorController GetRuntimeAnimatorController(string resourcePath)
+    {
+        return factoryManger.runtimeAnimatorFactory.GetSingleResource(resourcePath);
+    }
+
+    public GameObject GetGameObjectResource(FactoryType factoryType,string resourcePath)
+    {
+        return factoryManger.factoryDict[factoryType].GetItem(resourcePath);
+    }
+
+    public void PushGameObjectToFactory(FactoryType factoryType, string resourcePath,GameObject itemGo)
+    {
+        factoryManger.factoryDict[factoryType].PushItem(resourcePath, itemGo);
+    }
+
 }
