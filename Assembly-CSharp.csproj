@@ -61,6 +61,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Factory\AudioClipFactory.cs" />
+    <Compile Include="Assets\Scripts\Factory\BaseFactory\BaseFactory.cs" />
+    <Compile Include="Assets\Scripts\Factory\BaseFactory\IBaseFactory.cs" />
+    <Compile Include="Assets\Scripts\Factory\BaseFactory\IBaseResourceFactory.cs" />
+    <Compile Include="Assets\Scripts\Factory\FactoryType.cs" />
+    <Compile Include="Assets\Scripts\Factory\GameFactory.cs" />
+    <Compile Include="Assets\Scripts\Factory\RuntimeAnimatorControllerFactory.cs" />
+    <Compile Include="Assets\Scripts\Factory\SpriteFactory.cs" />
+    <Compile Include="Assets\Scripts\Factory\UIFactory.cs" />
+    <Compile Include="Assets\Scripts\Factory\UIPanelFactory.cs" />
     <Compile Include="Assets\Scripts\Manager\MonoBehaviourManager\GameController.cs" />
     <Compile Include="Assets\Scripts\Manager\MonoBehaviourManager\GameManager.cs" />
     <Compile Include="Assets\Scripts\Manager\NormalManager\AudioSourceManager.cs" />
@@ -71,6 +81,7 @@
     <Compile Include="Assets\Scripts\Manager\NormalManager\UIManager.cs" />
     <Compile Include="Assets\Scripts\Scene\BaseScene\BaseSceneState.cs" />
     <Compile Include="Assets\Scripts\Scene\BaseScene\IBaseSceneState.cs" />
+    <Compile Include="Assets\Scripts\UI\UIFacade.cs" />
     <None Include="Assets\DOTween\readme.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/myfiles/graduation/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

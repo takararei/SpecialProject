@@ -29,4 +29,10 @@ public class GameManager : MonoBehaviour {
         uiManager = new UIManager();
 
     }
+
+    public GameObject CreateItem(GameObject itemGo)
+    {
+        GameObject go = Instantiate(itemGo);
+        return go;
+    }
 }
